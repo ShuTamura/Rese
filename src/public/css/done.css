@@ -1,0 +1,26 @@
+.done {
+    width: 500px;
+    margin: 100px auto 0;
+    padding: 20px 40px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px #9d9d9d;
+    background-color: #fff;
+    text-align: center;
+}
+.done__p {
+    font-size: 20px;
+}
+.done__link {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px #9d9d9d;
+    background-color: #003FF5;
+}
+.done__btn {
+    font-size: 24px;
+    font-weight: solid;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+}

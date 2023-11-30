@@ -1,0 +1,11 @@
+.qr {
+    width: 100%;
+    text-align: center;
+    background-color: #3560F6;
+}
+.qr__header {
+    font-size: 30px;
+}
+.qr__wrap {
+    padding: 20px;
+}

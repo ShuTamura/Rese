@@ -1,0 +1,234 @@
+.admin__content {
+    max-width: 600px;
+    background-color: inherit;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.admin__link {
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #3560F6;
+}
+.back__btn {
+    display: block;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px 5px 0 0;
+    background-color: #6889ff;
+}
+.back__btn::before,
+.back__btn::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 27px;
+    background: #fff;
+}
+.back__btn::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.back__btn::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.notice {
+    padding: 15px;
+    text-align: center;
+    background-color: #6889ff;
+}
+.notice__header {
+    margin: 0;
+}
+.notice__inner {
+    text-align: left;
+    margin: 10px;
+    padding: 20px 20px 0px 20px;
+    border-radius: 5px;
+    background-color: #bebebe;
+}
+.notice-form__table {
+    width: 100%;
+}
+.notice-form__table th {
+    width: 110px;
+    vertical-align: top;
+}
+.notice-form__table th,
+.notice-form__table td {
+    border-bottom: 20px solid transparent;
+}
+.notice-form__input {
+    background-color: #fff;
+}
+.notice-form__input,
+.notice-form__textarea {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+}
+.notice-form__btn-box {
+    text-align: right;
+}
+.notice-form__btn {
+    width: 100px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #3560F6;
+}
+
+.admin__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+    box-shadow: 2px 2px 2px #9d9d9d;
+    background-color: #001668;
+}
+.admin__title {
+    border-radius: 5px;
+    background-color: #3560F6;
+    margin: 10px;
+    padding: 5px 10px;
+    font-size: 22px;
+    color: #fff
+}
+.search-form__flex {
+    display: flex;
+}
+.search-form {
+    width: 30%;
+    margin: 10px;
+    padding: 5px;
+    background-color: #fff;
+}
+.search-btn {
+    display: inline-block;
+    position: relative;
+}
+.form-item {
+    margin-left: 30px;
+}
+.form-btn-box {
+    position: relative;
+}
+.btn {
+    margin-left: 5px;
+    cursor: pointer;
+}
+.btn::before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(../storage/icons/search_icon.svg) no-repeat center / auto 100%;
+    top: 2px;
+    left: 5px;
+}
+
+.admin__item {
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    box-shadow: 2px 2px 2px #9d9d9d;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.admin__wrap {
+    padding: 5px;
+}
+.admin__table {
+    width: 500px;
+    border: 1px solid #000;
+    border-radius: 3px;
+}
+.admin__table th:first-child{
+    width: 40%;
+}
+.admin__table th:nth-of-type(2) {
+    width: 30%;
+}
+.admin__table th:nth-of-type(3) {
+    width: 30%;
+}
+.admin__user-name {
+    margin: auto 0;
+    font-size: 16px;
+}
+.admin__authority {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-color:cornflowerblue;
+}
+
+.admin-form__attach {
+    display: flex;
+}
+.admin-form__select {
+    font-size: 16px
+}
+.admin-form__btn {
+    width: 100%;
+    background-color: #3560F6;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+}
+.admin-form__btn--blue {
+    background-color: #3560F6;
+}
+.admin-form__btn--red {
+    background-color: #ff0000;
+}
+.message {
+    padding: 5px;
+    background-color: #001668;
+}
+
+@media screen and (max-width: 768px) {
+    .admin__content {
+        max-width: 600px;
+    }
+
+    .admin__item {
+        display: block;
+    }
+
+    .admin__wrap {
+        width: 100%;
+    }
+
+    .admin__table {
+        width: 100%;
+    }
+
+    .admin__authority,
+    .admin-form__btn {
+        /* display: inline-block; */
+        padding: 20px;
+    }
+
+    .admin__link {
+        position: static;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .admin__link a {
+        position: static;
+        text-decoration: none;
+        color: #fff;
+    }
+}

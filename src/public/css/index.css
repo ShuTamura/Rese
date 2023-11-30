@@ -1,0 +1,153 @@
+.search-form-box {
+    position: absolute;
+    display: inline-block;
+    width: 50%;
+    height: 80px;
+}
+.search-form {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    box-shadow: 2px 2px 2px #9d9d9d;
+    padding: 5px;
+    background-color: #fff;
+}
+.search-btn {
+    display: inline-block;
+    position: relative;
+}
+.form-item {
+    font-size: 16px;
+    padding: 5px;
+    border: none;
+}
+.form-item:not(:last-child) {
+    border-right: 1px solid #c5c5c5;
+}
+.form-item:last-child {
+    margin-left: 20px;
+}
+
+.form-btn-box {
+    position: relative;
+}
+.btn {
+    margin-left: 5px;
+    cursor: pointer;
+}
+.btn::before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(../storage/icons/search_icon.svg) no-repeat center / auto 100%;
+    top: 4px;
+    left: 5px;
+}
+
+.wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.card {
+    width: 300px;
+    height: 280px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px #9d9d9d;
+    background-color: #fff;
+}
+.card__img img {
+    width: 300px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+.card__content {
+    height: 130px;
+    padding: 20px;
+}
+.card__shop-name {
+    font-size: 18px;
+    /* line-height: 0; */
+    margin: 0;
+}
+.card__tag {
+    display: flex;
+    line-height: 0;
+}
+.card__item {
+    font-size: 14px;
+    /* line-height: 0; */
+    margin-top: 10px;
+}
+.card__item:last-child {
+    margin-left: 5px;
+}
+
+.card__jump {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card__link {
+    display: inline-block;
+    font-size: 16px;
+    padding: 5px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #3560F6;
+}
+
+.heart__btn {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+}
+.heart__btn::before,
+.heart__btn::after {
+    content: "";
+    width: 50%;
+    height: 80%;
+    background: #EB3223;
+    border-radius: 25px 25px 0 0;
+    display: block;
+    position: absolute;
+    top: 0;
+}
+.heart__btn::before {
+    transform: rotate(-45deg);
+    left: 14%;
+}
+.heart__btn::after {
+    transform: rotate(45deg);
+    right: 14%;
+}
+.heart__btn--gray::before,
+.heart__btn--gray::after {
+    background-color: #ccc;
+}
+.heart__btn--red::before,
+.heart__btn--red::after {
+    background-color: #EB3223;
+}
+
+@media screen and (max-width: 768px) {
+    .search-form-box {
+        position: static;
+        display: block;
+        width: 50%;
+        height: 80px;
+    }
+    .search-form {
+        position: absolute;
+        bottom: auto;
+        width: 100%;
+        padding: 10px;
+    }
+}

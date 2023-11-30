@@ -1,0 +1,65 @@
+.reservation__header {
+    font-size: 24px;
+}
+.reservation__p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.reservation-table {
+    width: 200px;
+    font-size: 20px;
+    text-align: center;
+}
+.reservation-table td {
+    width: 100%;
+    padding: 5px;
+    background-color: blue;
+}
+.reservation-info__link {
+    color: #fff;
+    text-decoration: none;
+}
+.reservation-info__link:hover {
+    color: #000;
+    background-color: aqua;
+    text-decoration: none;
+}
+
+.search-form {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 20px;
+    padding-right: 40px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #9d9d9d;
+    background-color: #003FF5;
+}
+.search-form__flex {
+    display: flex;
+}
+.form-btn-box {
+    position: relative;
+}
+.btn {
+    margin-left: 5px;
+    cursor: pointer;
+}
+.btn::before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(../storage/icons/search_icon.svg) no-repeat center / auto 100%;
+    top: 0;
+    left: 5px;
+}
+.form-item {
+    font-size: 24px;
+    box-shadow: 2px 2px 2px #9d9d9d;
+    background-color: #fff;
+}
+.form-item:first-child {
+    margin-right: 20px;
+}

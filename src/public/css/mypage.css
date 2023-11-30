@@ -1,0 +1,252 @@
+.mypage {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.mypage__content {
+    display: flex;
+}
+.mypage__content > div:first-child {
+    width: 45%;
+}
+.mypage__hello {
+    font-size: 20px;
+}
+
+.mypage__review {
+    margin: auto 0;
+}
+.mypage__review a {
+    display: inline-block;
+    font-size: 20px;
+    padding: 5px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #0037ff;
+}
+
+.reservation__edit {
+    /* display: flex; */
+    /* justify-content: space-between; */
+    position: relative;
+    width: 80%;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #9d9d9d;
+    font-size: 16px;
+    color: #fff;
+    background-color: #3560F6;
+}
+
+.edit-form tr {
+    position: relative;
+}
+.edit-form tr:first-child {
+    display: inline-block;
+    margin: 15px 0 30px;
+}
+.edit-form tr:not(:first-child) {
+    border-bottom: 15px solid transparent;
+}
+.edit-form th {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+}
+.edit-form th::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: url(../storage/icons/time_icon.svg) no-repeat center / auto 100%;
+    left: 0;
+}
+.edit-form__input,
+.edit-form__select {
+    width: 100%;
+    font-size: 16px;
+    border: none;
+    color: #fff;
+    background-color: #3560F6;
+}
+.edit-form__btn {
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #3560F6;
+    background-color: #fff;
+    cursor: pointer;
+}
+.reservation__btn {
+    margin-top: 10px;
+}
+.qrcode,
+.payment {
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #3560F6;
+    background-color: #fff;
+    cursor: pointer;
+}
+.payment__paid {
+    background-color: #7795ff;
+}
+
+.message {
+    display: inline-block;
+    background-color: rgb(60, 63, 255);
+    font-size: 16px;
+    color: #3560F6;
+}
+
+.reservation__cross {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.delete-form {
+    position: relative;
+}
+.delete-form__btn {
+    cursor: pointer;
+}
+.delete-form__btn::before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(../storage/icons/cross_icon.svg) no-repeat center / auto 100%;
+    top: 10px;
+    right: 10px;
+}
+
+.favorite-shop {
+    width: 55%;
+}
+.favorite-shop__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.card {
+    width: 300px;
+    height: 280px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #9d9d9d;
+    background-color: #fff;
+}
+
+.card__img img {
+    width: 300px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+}
+
+.card__content {
+    height: 130px;
+    padding: 20px;
+}
+
+.card__shop-name {
+    font-size: 18px;
+    margin: 0;
+}
+
+.card__tag {
+    display: flex;
+    line-height: 0;
+}
+
+.card__item {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.card__item:last-child {
+    margin-left: 5px;
+}
+
+.card__jump {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card__link {
+    display: inline-block;
+    font-size: 16px;
+    padding: 5px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #3560F6;
+}
+
+.heart__btn {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+}
+
+.heart__btn::before,
+.heart__btn::after {
+    content: "";
+    width: 50%;
+    height: 80%;
+    background: #EB3223;
+    border-radius: 25px 25px 0 0;
+    display: block;
+    position: absolute;
+    top: 0;
+}
+
+.heart__btn::before {
+    transform: rotate(-45deg);
+    left: 14%;
+}
+
+.heart__btn::after {
+    transform: rotate(45deg);
+    right: 14%;
+}
+
+.heart__btn--gray::before,
+.heart__btn--gray::after {
+    background-color: #ccc;
+}
+
+.heart__btn--red::before,
+.heart__btn--red::after {
+    background-color: #EB3223;
+}
+
+@media screen and (max-width: 768px) {
+    .mypage__content {
+        display: block;
+    }
+    .mypage__content>div:first-child {
+        width: 100%;
+    }
+    .reservation__edit {
+        width: 100%;
+        font-size: 20px;
+        color: #fff;
+        background-color: #3560F6;
+    }
+
+    .favorite-shop {
+        width: 100%;
+    }
+    .favorite-shop__list {
+        justify-content: space-around;
+    }
+}

@@ -1,0 +1,48 @@
+.login__content {
+    max-width: 400px;
+    background-color: #fff;
+    margin: 80px auto;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #9d9d9d;
+}
+.login__title {
+    border-radius: 5px 5px 0 0;
+    background-color: #3560F6;
+    margin: 0;
+    padding: 5px 10px;
+    font-size: 22px;
+    color: #fff
+}
+.form {
+    padding: 30px;
+}
+.email-form,
+.password-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.email-form {
+    margin-bottom: 10px;
+}
+.password-form {
+    margin: 5px auto 15px;
+}
+.form__item {
+    width: 90%;
+    height: 20px;
+    font-size: 16px;
+    border-bottom: 2px solid #000;
+}
+
+.login-btn {
+    text-align: right;
+}
+.btn {
+    padding: 5px 15px;
+    font-size: 16px;
+    color: #fff;
+    border-radius: 5px;
+    background-color: #3560F6;
+    cursor: pointer;
+}

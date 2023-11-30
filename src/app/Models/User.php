@@ -2,15 +2,18 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Contracts\Auth\MustVerifyEmail as MustVerifyEmailContract;
+use Illuminate\Auth\MustVerifyEmail;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmailContract
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use MustVerifyEmail, HasApiTokens, HasFactory, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -41,4 +44,24 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function favorites() {
+        return $this->belongsToMany('App\Models\Shop', 'favorites');
+    }
+    public function roles() {
+        return $this->belongsToMany('App\Models\Role', 'role_users', 'user_id', 'role_id');
+    }
+    public function shop() {
+        return $this->hasOne('App\Models\Shop');
+    }
+    public function reservations() {
+        return $this->belongsToMany('App\Models\Shop', 'reservations', 'user_id', 'shop_id')
+                    ->as('content')
+                    ->withPivot('id', 'date', 'time', 'number', 'payment');
+    }
+    public function reviews() {
+        return $this->belongsToMany('App\Models\Shop', 'reviews', 'user_id', 'shop_id')
+                    ->as('content')
+                    ->withPivot('id', 'score', 'comment');
+    }
 }

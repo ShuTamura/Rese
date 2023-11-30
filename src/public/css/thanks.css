@@ -1,0 +1,31 @@
+.thanks {
+    width: 500px;
+    margin: 100px auto 0;
+    padding: 20px 40px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px #9d9d9d;
+    background-color: #fff;
+    text-align: center;
+}
+
+.thanks__p,
+.verify-email__guide {
+    font-size: 20px;
+}
+
+.thanks__link,
+.verify-email__send-form {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px #9d9d9d;
+    background-color: #003FF5;
+}
+
+.verify-email__form-btn {
+    font-size: 24px;
+    font-weight: solid;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+}

@@ -1,0 +1,34 @@
+.rep {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: aqua;
+    text-align: center;
+}
+.rep__hello,
+.rep__alert {
+    margin: 0 auto;
+}
+.rep__p {
+    font-size: 20px;
+}
+
+.rep__tab {
+    display: flex;
+}
+.rep__shop-info,
+.rep__reservation {
+    width: 50%;
+    padding: 20px;
+    font-size: 20px;
+    border: 1px solid #9d9d9d;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px #9d9d9d;
+    background-color: #003FF5;
+}
+a {
+    text-decoration: none;
+    color: #fff;
+}
+.rep__hello span {
+    margin: 0 10px;
+}

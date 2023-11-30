@@ -1,0 +1,10 @@
+.verification__header {
+    font-size: 30px;
+}
+.verification-table {
+    font-size: 24px;
+    text-align: center;
+}
+.verification-table span {
+    margin: 0 20px;
+}

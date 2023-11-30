@@ -1,0 +1,53 @@
+.shop__edit {
+    width: 70%;
+}
+.shop__header {
+    margin: 0;
+    padding: 20px;
+    border-radius: 5px 5px 0 0;
+    color: #fff;
+    background-color: #003FF5;
+}
+.shop__info {
+    padding: 10px;
+    box-shadow: 2px 2px 2px #9d9d9d;
+    background-color: rgb(255, 255, 255);
+}
+.create-form {
+    font-size: 20px;
+}
+.create-form__label {
+    display: inline-block;
+    width: 150px;
+    margin-bottom: 10px;
+}
+.create-form__input {
+    padding: 5px auto;
+    border: 1px solid #000;
+}
+.create-form__input,
+.create-form__select,
+.create-form__textarea {
+    font-size: 18px;
+    background-color: #fff;
+}
+.create-form__textarea {
+    width: 100%;
+}
+.create-form__btn {
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #003FF5;
+}
+
+.message {
+    display: inline-block;
+    font-size: 24px;
+}
+
+@media screen and (max-width: 768px) {
+    .shop__edit {
+        width: 100%;
+    }
+}
