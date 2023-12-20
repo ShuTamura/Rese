@@ -22,10 +22,20 @@ Route::get('/', [ShopController::class, 'index']);
 Route::get('/menu', [ShopController::class, 'menu']);
 Route::get('/detail/{shop}', [ShopController::class, 'detail']);
 Route::get('/search', [ShopController::class, 'search']);
+Route::get('/sort', [ShopController::class, 'sort']);
+
 
 Route::middleware(['web', 'verified', 'auth'])->group(function () {
     Route::get('/done', [ShopController::class, 'done']);
     Route::get('/logout', [AuthController::class, 'logout']);
+
+    Route::prefix('review')->group(function () {
+        Route::get('by/{shop?}', [ShopController::class, 'Reviews']);
+        Route::get('shop/{shop?}', [ShopController::class, 'editReview']);
+        Route::post('shop/{shop?}', [ShopController::class,'createReview']);
+        Route::patch('update/{review}', [ShopController::class,'updateReview']);
+        Route::delete('delete/{review}', [ShopController::class,'destroyReview']);
+    });
 
     Route::prefix('rep')->group(function () {
         Route::get('', [ShopController::class, 'repPage']);
@@ -38,24 +48,21 @@ Route::middleware(['web', 'verified', 'auth'])->group(function () {
     });
 
     Route::prefix('admin')->group(function () {
-        Route::get('{notice}', [AuthController::class, 'adminPage']);
+        Route::get('{trigger}', [AuthController::class, 'adminPage']);
         Route::post('send', [AuthController::class, 'noticeMail']);
-        Route::get('{notice}/search', [AuthController::class, 'search']);
+        Route::get('{trigger}/search', [AuthController::class, 'search']);
         Route::patch('attach', [AuthController::class, 'attach']);
         Route::patch('detach', [AuthController::class, 'detach']);
+        Route::post('csv', [ShopController::class, 'csvUpload']);
+        Route::post('csv/add', [ShopController::class, 'csvAdd']);
     });
 
     Route::prefix('mypage')->group(function () {
         Route::get('', [ShopController::class,'helloUser'])->name('mypage');
         Route::get('qr/{reservation_id}', [ReservationController::class,'getQrCode']);
-        // Route::get('payment/', function() {
-        //     return redirect()->route('mypage');
-        // });
         Route::get('payment/{reservation_id}', [PaymentsController::class,'getPayment']);
         Route::post('payment/{reservation_id}', [PaymentsController::class,'Payment']);
         Route::get('visited', [ShopController::class,'visited']);
-        Route::get('review/{review}', [ShopController::class,'reviewPage']);
-        Route::patch('review/{review}', [ShopController::class,'review']);
     });
 
     Route::prefix('favorite')->group(function () {

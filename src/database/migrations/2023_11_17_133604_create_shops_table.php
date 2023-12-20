@@ -21,6 +21,7 @@ class CreateShopsTable extends Migration
             $table->foreignId('user_id')->nullable()->constrained()->cascadeOnDelete();
             $table->string('detail');
             $table->string('image')->nullable();
+            $table->double('all_score', 2, 1)->nullable();
             $table->timestamps();
         });
     }

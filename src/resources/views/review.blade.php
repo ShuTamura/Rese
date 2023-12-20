@@ -23,7 +23,6 @@
                 <input type="hidden" name="id" value="{{ $review->id }}">
                 <div class="review__score">
                     <div class="score-form">
-                        {{$review->score}}
                         <input id="star5" type="radio" name="score" value="5" @if(5 == $review->score) checked @endif>
                         <label for="star5">★</label>
                         <input id="star4" type="radio" name="score" value="4" @if(4 == $review->score) checked @endif>

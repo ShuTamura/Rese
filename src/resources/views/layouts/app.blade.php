@@ -15,7 +15,7 @@
 </head>
 
 <body class="container">
-    <main id="app" class="main">
+    <main class="main">
         <div class="menu">
             <div class="menu__inner">
                 <a href="/menu" class="hamburger">
@@ -26,6 +26,9 @@
                 <h1 class="title">Rese</h1>
             </div>
         </div>
+        @if(session('message'))
+        <p class="message">{{ session('message') }}</p>
+        @endif
         @yield('content')
     </main>
     @yield('js')

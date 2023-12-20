@@ -5,6 +5,17 @@
 @endsection
 
 @section('content')
+<div class="sort">
+    <form action="/sort" class="sort-form">
+        <label for="sort" class="sort-form_label">並べ替え：</label>
+        <select name="sort" id="sort" class="sort-form__select" onchange="submit(this.form)">
+            <option value="">評価高/低</option>
+            <option value="random">ランダム</option>
+            <option value="hight_score">評価が高い順</option>
+            <option value="low_score">評価が低い順</option>
+        </select>
+    </form>
+</div>
 <div class="search-form-box">
     {{old('keyword')}}
     <form class="search-form" action="/search" method="GET">
@@ -35,6 +46,11 @@
         </div>
         <div class="card__content">
             <h3 class="card__shop-name">{{ $shop->name }}</h3>
+            <p class="card__shop-p">
+                <span class="card__shop-span card__shop-span--blue">★</span>
+                <span class="card__shop-span card__shop-span--black">：</span>
+                {{ $shop->all_score }}
+            </p>
             <div class="card__tag">
                 <p class="card__item">#{{ $shop->area->name }}</p>
                 <p class="card__item">#{{ $shop->genre->name }}</p>
