@@ -24,10 +24,11 @@ class ShopRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:120',
+            'name' => 'required|string|max:50',
             'area_id' => 'required',
             'genre_id' => 'required',
-            'detail' => 'required|string|max:150'
+            'detail' => 'required|string|max:400',
+            'image' => 'file|mimes:jpg,jpeg,png',
         ];
     }
 
@@ -41,7 +42,8 @@ class ShopRequest extends FormRequest
             'genre_id.required' => 'ジャンルを入力してください',
             'detail.required' => 'お店の詳細を入力してください',
             'detail.string' => '正しく入力してください',
-            'detail.max' => '150文字以内で入力してください',
+            'detail.max' => '400文字以内で入力してください',
+            'image.mimes' => '非対応の拡張子です。jpeg、pngのみアップロード可能です',
         ];
     }
 }

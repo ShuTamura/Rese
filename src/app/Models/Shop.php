@@ -18,6 +18,7 @@ class Shop extends Model
         'user_id',
         'detail',
         'image',
+        'all_score',
     ];
 
     public function favorites() {

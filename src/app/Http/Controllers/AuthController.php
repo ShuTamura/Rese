@@ -108,17 +108,23 @@ class AuthController extends Controller
 
         $users = User::all();
 
-        if($request->notice) {
-            return view('admin', compact('users'))->with(['send_notice' => true]);
+        switch($request->trigger) {
+            case 0;
+            return view('admin', compact('users'))->with(['send_notice' => false, 'import_csv' => false]);
+            break;
+            case 1;
+            return view('admin', compact('users'))->with(['send_notice' => true, 'import_csv' => false]);
+            break;
+            case 2;
+            return view('admin', compact('users'))->with(['send_notice' => false, 'import_csv' => true]);
+            break;
         }
-        return view('admin', compact('users'))->with(['send_notice' => false]);
     }
 
     public function search(Request $request) {
         $users = User::where('name', 'like', '%' . $request->keyword . '%')->get();
-        // dd($users);
 
-        return view('admin', compact('users'))->with(['send_notice' => false]);
+        return view('admin', compact('users'))->with(['send_notice' => false, 'import_csv' => false]);
     }
 
     public function attach(Request $request) {

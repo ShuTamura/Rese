@@ -21,7 +21,7 @@
             <div class="visited__shop-detail">{{ $review->shop->detail }}</div>
         </div>
         <div class="visited__link">
-            <a href="{{ '/mypage/review/' . $review->id}}">REVIEW</a>
+            <a href="{{ '/review/shop/' . $review->shop->id}}">REVIEW</a>
         </div>
     </div>
     @endforeach

@@ -6,8 +6,17 @@
 
 @section('content')
 <div class="admin__content">
-    @if(session('message'))
-        <p class="message">{{ session('message') }}</p>
+    @if(session('error'))
+    <p class="error-message">{{ session('error') }}</p>
+    @endif
+    @if (count($errors) > 0)
+    <div class="error-message">
+        <p>@error('name.*'){{ $message }}@enderror</p>
+        <p>@error('area.*'){{ $message }}@enderror</p>
+        <p>@error('genre.*'){{ $message }}@enderror</p>
+        <p>@error('detail.*'){{ $message }}@enderror</p>
+        <p>@error('image.*'){{ $message }}@enderror</p>
+    </div>
     @endif
     <div class="admin__send-mail">
         @if($send_notice)
@@ -49,6 +58,40 @@
         </div>
         @else
         <a class="admin__link" href="/admin/1">お知らせメールを送信する</a>
+        @endif
+    </div>
+    <div class="admin__csv">
+        @if($import_csv)
+        <div class="admin__cross">
+            <a href="/admin/0" class="back">
+                <span class="back__btn"></span>
+            </a>
+        </div>
+        <div id="app" class="csv">
+            <h3 class="csv__header">csvファイルのインポート</h3>
+            <form class="csv-form" method="post" action="/admin/csv" enctype="multipart/form-data">
+                @csrf
+                <div class="csv-form__wrap">
+                    <p class="csv-form__filename">@{{ file }}</p>
+                    <div class="csv-form__str">
+                        <p class="csv-form__click">クリックして写真を追加</p>
+                        <span class="csv-form__span">またはドラッグアンドドロップ</span>
+                    </div>
+                    <input type="file" name="csv_file" class="csv-form__input" id="csvFile" v-model.trim="file">
+                </div>
+                <p class="error-message">
+                    @error('csv_file'){{ $message }}@enderror
+                </p>
+                @if(session('message'))
+                <p class="error-message">{{ session('error') }}</p>
+                @endif
+                <div class="csv-form__btn-wrap">
+                    <button type="submit" class="csv-form__btn">確認画面へ進む</button>
+                </div>
+            </form>
+        </div>
+        @else
+        <a class="admin__link" href="/admin/2">csvファイルから店舗情報を追加</a>
         @endif
     </div>
     <div class="admin__header">
@@ -168,4 +211,15 @@
     </div>
     @endforeach
 </div>
+@endsection
+
+@section('js')
+<script>
+    new Vue({
+        el:'#app',
+        data: {
+            file: "",
+        }
+    });
+</script>
 @endsection

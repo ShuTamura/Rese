@@ -1,18 +1,16 @@
+
 .detail {
-    position: absolute;
-    top: 100px;
-    left: 0;
-    display: inline-block;
     width: 45%;
+    margin-top: 30px;
 }
 .reservation {
-    position: absolute;
+    position: fixed;
     top: 20px;
-    right: 0;
-    display: inline-block;
+    left: auto;
+    margin: 0 0 0 676px;
     box-shadow: 2px 2px 2px #9d9d9d;
     background-color: #3560F6;
-    width: 45%;
+    width: 554px;
     border-radius: 5px;
 }
 
@@ -68,6 +66,90 @@
 .detail__description {
     font-size: 16px;
 }
+.detail__all-reviews {
+    display: inline-block;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #5580F7;
+}
+.detail__post-review {
+    display: inline-block;
+    border-top: 1px solid #9d9d9d;
+    border-bottom: 1px solid #9d9d9d;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 10px;
+    color: #000;
+}
+
+
+.my-review__title {
+    margin: 0;
+}
+.star-review {
+    position: relative;
+    z-index: 0;
+    display: inline-block;
+    white-space: nowrap;
+    color: #CCCCCC;
+}
+.star-review:before,
+.star-review:after {
+    content: '★★★★★';
+    font-size: 35px;
+}
+.star-review:after {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #3560F6;
+}
+.star-review[data-rate="5"]:after {
+    width: 100%;
+}
+.star-review[data-rate="4"]:after {
+    width: 80%;
+}
+.star-review[data-rate="3"]:after {
+    width: 60%;
+}
+.star-review[data-rate="2"]:after {
+    width: 40%;
+}
+.star-review[data-rate="1"]:after {
+    width: 20%;
+}
+.star-review[data-rate="0"]:after,
+.star-review[data-rate=""]:after {
+    width: 0%;
+}
+
+
+.my-review {
+    border-top: 1px solid #9d9d9d;
+    border-bottom: 1px solid #9d9d9d;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 10px;
+}
+.my-review__edit {
+    display: flex;
+    justify-content: right;
+}
+.my-review__update {
+    margin-right: 10px;
+    color: #000;
+}
+.my-review__delete-btn {
+    text-decoration: underline;
+    cursor: pointer;
+}
 
 .reservation__header {
     color: #fff;
@@ -103,7 +185,7 @@
     background-color: #fff;
     margin-bottom: 10px;
     font-size: 16px;
-    padding: 10px;
+    padding: 5px;
 }
 .form__btn {
     padding: 20px;
@@ -124,7 +206,7 @@
 }
 
 .confirm__attention {
-    font-size: 30px;
+    font-size: 24px;
     color: #fff;
     text-align: center;
 }

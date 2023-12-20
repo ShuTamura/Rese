@@ -14,27 +14,51 @@
             </form>
         </div>
         <div class="detail__shop-name">
-            <h3 class="detail__header">{{ $detail->name }}</h3>
+            <h3 class="detail__header">{{ $shop->name }}</h3>
         </div>
     </div>
     <div class="detail__content">
         <div class="detail__img">
-            <img src="{{ asset('storage/shop_img/' . $detail->image) }}" alt="">
+            <img src="{{ asset('storage/shop_img/' . $shop->image) }}" alt="">
         </div>
         <div class="detail__tag">
-            <p class="detail__item">#{{ $detail->area->name }}</p>
-            <p class="detail__item">#{{ $detail->genre->name }}</p>
+            <p class="detail__item">#{{ $shop->area->name }}</p>
+            <p class="detail__item">#{{ $shop->genre->name }}</p>
         </div>
-        <p class="detail__description">{{ $detail->detail }}</p>
+        <p class="detail__description">{{ $shop->detail }}</p>
+    </div>
+    <div class="detail__content">
+        <a href="{{ '/review/by/' . $shop->id }}" class="detail__all-reviews">全ての口コミ情報</a>
+        @if($review)
+        <div class="my-review">
+            <div class="my-review__edit">
+                <a href="{{ '/review/shop/' . $shop->id }}" class="my-review__update">口コミを編集</a>
+                <form action="{{ '/review/delete/' . $review->id }}" class="my-review__delete" method="POST">
+                    @method('DELETE')
+                    @csrf
+                    <button class="my-review__delete-btn">口コミを削除</button>
+                </form>
+            </div>
+            <div class="my-review__wrap">
+                <p class="my-review__title">{{ $review->title }}</p>
+                <div class="my-review__star">
+                    <span class="star-review" data-rate="{{ $review->score }}"></span>
+                </div>
+                <p class="my-review__text">{{ $review->comment }}</p>
+            </div>
+        </div>
+        @else
+        <a href="{{ '/review/shop/' . $shop->id }}" class="detail__post-review">口コミを投稿する</a>
+        @endif
     </div>
 </div>
-<div class="reservation">
+<div id="app" class="reservation">
     <h3 class="reservation__header">予約</h3>
     <div class="reservation__form">
         <form action="/reservation/add" class="form" method="post">
             @csrf
             <div class="form__content">
-                <input type="hidden" name="shop_id" class="form__input form__input--hidden" value="{{ $detail->id }}">
+                <input type="hidden" name="shop_id" class="form__input form__input--hidden" value="{{ $shop->id }}">
                 <input type="date" name="date" class="form__input" v-model="date" value="{{ old('date') }}">
                 <div class="error-message">
                     @error('date'){{ $message }}@enderror
@@ -64,7 +88,7 @@
                         <table>
                             <tr>
                                 <td>Shop</td>
-                                <td>{{ $detail->name }}</td>
+                                <td>{{ $shop->name }}</td>
                             </tr>
                             <tr>
                                 <td>Date</td>

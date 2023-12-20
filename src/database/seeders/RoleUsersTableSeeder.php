@@ -18,7 +18,11 @@ class RoleUsersTableSeeder extends Seeder
                 'user_id' => 1,
                 'role_id' => 1,
             ];
-        for($i=2;$i<=10;$i++) {
+        $role_users[] = [
+            'user_id' => 2,
+            'role_id' => 2,
+        ];
+        for($i=3;$i<=10;$i++) {
             $role_users[] = [
                 'user_id' => $i,
                 'role_id' => 3,
