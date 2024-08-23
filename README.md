@@ -42,6 +42,7 @@ laravelのパッケージインストール
 ```
 $ docker-compose exec php bash //phpコンテナにログイン
 $ composer install
+$ cp .env.example .env
 ```
 .envファイルの編集
 ```
