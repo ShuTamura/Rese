@@ -54,9 +54,10 @@ DB_PORT=3306
 - DB_DATABASE=laravel
 - DB_USERNAME=root
 - DB_PASSWORD=
-+ DB_DATABASE="データベース名"          //
-+ DB_USERNAME="データベースユーザー名"   //docker-compose.ymlのmysqlをもとに編集
-+ DB_PASSWORD="データベースパスワード"   //
+// docker-compose.ymlのmysqlをもとに編集
++ DB_DATABASE="データベース名"          // MYSQL_DATABASE: "データベース名"
++ DB_USERNAME="データベースユーザー名"   // MYSQL_USER: "データベースユーザー名"
++ DB_PASSWORD="データベースパスワード"   // MYSQL_PASSWORD: "データベースパスワード"
 +STRIPE_KEY=pk_test_51OHxjRD2FLMWAcqM5xedZntiyRytChUAzIQ1vTGqH4gy7qgDibaY52ntXc6yEnMH0LPaGflm1au5AfC2dJxSQ7n100cqs6Drsj
 +STRIPE_SECRET=sk_test_51OHxjRD2FLMWAcqMcVjQiJ00KBWd4O20ujxiBkAotNCYfk6MmRaG3wpMYmjsdbGPSzPLYjpbYfcRqj01ROekHOSl00Y83AJJB8 //stripeによる決済機能実装
 
